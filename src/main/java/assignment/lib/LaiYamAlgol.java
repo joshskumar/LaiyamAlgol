@@ -28,7 +28,7 @@ public class LaiYamAlgol {
                     int eventAmount = scan.nextInt();
                     System.out.println("Enter the Destination Processor");
                     int destProcessor = scan.nextInt();
-                    Event event = new Event(eventAmount,"processor"+(destProcessor+1));
+                    Event event = new Event(eventAmount,"processor"+(destProcessor));
                     eventArrayList[j]=event;
                 }
                 else {
@@ -40,7 +40,14 @@ public class LaiYamAlgol {
             processor[i] = process;
         }
 
-        System.out.println(processor.length);
+        Processing [] processes = new Processing[processor.length];
+        for (int i = 0; i < processor.length; i++){
+            processes[i] = new Processing(processor[i]);
+
+        }
+        for (Processing proces : processes){
+            proces.start();
+        }
     }
 
 }
