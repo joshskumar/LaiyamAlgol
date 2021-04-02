@@ -16,7 +16,7 @@ public class Processing extends Thread {
         }
         for (Channel channel:channels){
             try {
-                Thread.sleep(1000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
