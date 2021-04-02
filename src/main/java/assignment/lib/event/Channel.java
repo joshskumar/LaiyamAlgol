@@ -1,6 +1,8 @@
-package assignment.lib;
+package assignment.lib.event;
 
-import java.util.Hashtable;
+import assignment.lib.processor.ProcessorState;
+import assignment.utils.Color;
+import assignment.utils.Constants;
 
 public class Channel extends Thread{
 

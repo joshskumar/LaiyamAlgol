@@ -1,4 +1,4 @@
-package assignment.lib;
+package assignment.lib.event;
 
 public class Event {
 

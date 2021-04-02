@@ -1,4 +1,7 @@
-package assignment.lib;
+package assignment.lib.processor;
+
+import assignment.lib.event.Channel;
+import assignment.lib.event.Event;
 
 public class Processing extends Thread {
 

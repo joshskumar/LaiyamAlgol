@@ -1,4 +1,6 @@
-package assignment.lib;
+package assignment.lib.core;
+
+import assignment.lib.core.LaiYamAlgol;
 
 public class Main {
 

@@ -1,7 +1,11 @@
-package assignment.lib;
+package assignment.lib.core;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import assignment.utils.Color;
+import assignment.lib.event.Event;
+import assignment.lib.processor.Processing;
+import assignment.lib.processor.Processor;
+import assignment.utils.Constants;
+
 import java.util.Scanner;
 
 public class LaiYamAlgol {
@@ -15,7 +19,7 @@ public class LaiYamAlgol {
         for (int i=0; i < noOfProcessor; i++){
             System.out.println("Enter the intial value for Processor "+(i+1));
             int amount = scan.nextInt();
-            globalState.setGlobalstate("processor"+(i+1),Color.WHITE,amount);
+            globalState.setGlobalstate("processor"+(i+1), Color.WHITE,amount);
             System.out.println("enter the number of events including snapshot");
             int noOfEvents = scan.nextInt();
             Event[] eventArrayList = new Event[noOfEvents];
@@ -43,7 +47,7 @@ public class LaiYamAlgol {
             processor[i] = process;
         }
 
-        Processing [] processes = new Processing[processor.length];
+        Processing[] processes = new Processing[processor.length];
         for (int i = 0; i < processor.length; i++){
             processes[i] = new Processing(processor[i]);
 

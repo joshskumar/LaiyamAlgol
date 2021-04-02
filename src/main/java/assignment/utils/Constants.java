@@ -1,6 +1,7 @@
-package assignment.lib;
+package assignment.utils;
 
-import java.util.Enumeration;
+import assignment.lib.processor.ProcessorState;
+
 import java.util.Hashtable;
 
 public class Constants {
@@ -21,7 +22,7 @@ public class Constants {
     }
 
 
-    public synchronized  void  setGlobalstate(String processor,Color color, int value) {
+    public synchronized  void  setGlobalstate(String processor, Color color, int value) {
         ProcessorState state = new ProcessorState();
         state.setValue(value);
         state.setColor(color);

@@ -1,4 +1,6 @@
-package assignment.lib;
+package assignment.lib.processor;
+
+import assignment.utils.Color;
 
 public class ProcessorState {
     private int value;

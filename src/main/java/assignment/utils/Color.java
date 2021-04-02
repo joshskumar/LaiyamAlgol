@@ -1,4 +1,4 @@
-package assignment.lib;
+package assignment.utils;
 
 public enum Color {
     WHITE,
