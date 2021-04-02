@@ -13,7 +13,7 @@ public class LaiYamAlgol {
         Constants globalState = Constants.init();
         Processor processor [] = new Processor[noOfProcessor];
         for (int i=0; i < noOfProcessor; i++){
-            System.out.println("Enter the intial value greater than 100");
+            System.out.println("Enter the intial value for Processor "+(i+1));
             int amount = scan.nextInt();
             globalState.setGlobalstate("processor"+(i+1),Color.WHITE,amount);
             System.out.println("enter the number of events including snapshot");
@@ -24,14 +24,17 @@ public class LaiYamAlgol {
                 System.out.println("enter 1 if it is send event else it will be considered snapshot");
                 int snapshot = scan.nextInt();
                 if (snapshot == 1) {
-                    System.out.println("Enter the amount for the event");
+                    System.out.println("Enter the amount which needs to be transferred to the destination processor");
                     int eventAmount = scan.nextInt();
-                    System.out.println("Enter the Destination Processor");
+                    System.out.println("Enter the Destination Processor number");
                     int destProcessor = scan.nextInt();
-                    Event event = new Event(eventAmount,"processor"+(destProcessor));
+                    System.out.println("Enter the time in milliseconds for this the event should be in transit");
+                    int timeTaken = scan.nextInt();
+                    Event event = new Event(eventAmount,"processor"+(destProcessor),timeTaken);
                     eventArrayList[j]=event;
                 }
                 else {
+                    System.out.println("This Event is a Snapshot ");
                     eventArrayList[j] = new Event();
                 }
 

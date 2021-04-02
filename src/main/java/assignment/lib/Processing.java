@@ -15,6 +15,11 @@ public class Processing extends Thread {
              channels[i]= new Channel(events[i],processor.getName());
         }
         for (Channel channel:channels){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             channel.start();
         }
     }

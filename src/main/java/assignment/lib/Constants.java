@@ -1,5 +1,6 @@
 package assignment.lib;
 
+import java.util.Enumeration;
 import java.util.Hashtable;
 
 public class Constants {
@@ -29,5 +30,12 @@ public class Constants {
 
     public Hashtable<String, ProcessorState> getGlobalstate(){
         return this.globalstate;
+    }
+
+    public void displayGlobalState(String stateKey){
+      //  for (String stateKey : globalstate.keySet()){
+            ProcessorState currentState = globalstate.get(stateKey);
+            System.out.println("Processor : " +stateKey+ "\nCurrent color : "+ currentState.getColor()+"\nCurrent amount : "+ currentState.getValue());
+     //   }
     }
 }
