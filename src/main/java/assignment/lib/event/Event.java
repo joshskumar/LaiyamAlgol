@@ -6,14 +6,18 @@ public class Event {
     private String destProcess;
     private boolean snapshot=false;
     private  int timeTaken;
+    private int launchDelay;
+    private String eventName;
 
-    public Event (){
+    public Event (String eventName){
         snapshot = true;
     }
-    public Event(int amount, String destProcess, int timeTaken){
+    public Event(String eventName ,int amount, String destProcess, int timeTaken, int launchDelay){
         this.amount = amount;
         this.destProcess = destProcess;
         this.timeTaken = timeTaken;
+        this.launchDelay = launchDelay;
+        this.eventName = eventName;
     }
 
     public int getAmount() {
@@ -30,5 +34,11 @@ public class Event {
 
     public int getTimeTaken(){
         return timeTaken;
+    }
+
+    public int getLaunchDelay(){ return  launchDelay;}
+
+    public String getEventName() {
+        return eventName;
     }
 }

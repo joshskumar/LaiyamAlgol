@@ -39,4 +39,11 @@ public class Constants {
             System.out.println("Processor : " +stateKey+ "\nCurrent color : "+ currentState.getColor()+"\nCurrent amount : "+ currentState.getValue());
      //   }
     }
+
+    public void displayall(){
+        for (String stateKey : globalstate.keySet()){
+        ProcessorState currentState = globalstate.get(stateKey);
+        System.out.println("Processor : " +stateKey+ "\nCurrent color : "+ currentState.getColor()+"\nCurrent amount : "+ currentState.getValue());
+        }
+    }
 }

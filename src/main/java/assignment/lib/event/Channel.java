@@ -3,6 +3,7 @@ package assignment.lib.event;
 import assignment.lib.processor.ProcessorState;
 import assignment.utils.Color;
 import assignment.utils.Constants;
+import assignment.utils.EventTracker;
 
 public class Channel extends Thread{
 
@@ -20,7 +21,12 @@ public class Channel extends Thread{
     public void run (){
 
         ProcessorState sourceState = globalState.getGlobalstate().get(sourceProcessName);
-       if (event.getSnapshot() && (sourceState.getColor() == Color.WHITE) ){
+        try {
+            Thread.sleep(event.getLaunchDelay());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (event.getSnapshot() && (sourceState.getColor() == Color.WHITE) ){
                System.out.println(snapshot + " of the processor "+ sourceProcessName);
                globalState.setGlobalstate(sourceProcessName,Color.RED,sourceState.getValue());
            globalState.displayGlobalState(sourceProcessName);
@@ -54,7 +60,8 @@ public class Channel extends Thread{
            globalState.setGlobalstate(event.getDestProcess(),color,destState.getValue() + event.getAmount());
            globalState.displayGlobalState(event.getDestProcess());
        }
-
+        EventTracker tracker = EventTracker.init();
+        tracker.setEventList(event.getEventName(),true);
     }
 
 }
