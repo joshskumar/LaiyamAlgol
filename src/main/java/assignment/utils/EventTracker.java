@@ -19,7 +19,7 @@ public class EventTracker {
     public  boolean getEventList() {
         boolean flag = true;
         for (String eventkey : eventList.keySet()){
-            flag = eventList.get(eventkey);
+            flag = flag && eventList.get(eventkey);
         }
         return flag;
     }

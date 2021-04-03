@@ -1,7 +1,5 @@
 package assignment.utils;
 
-import assignment.lib.processor.ProcessorState;
-
 import java.util.Hashtable;
 
 public class Constants {

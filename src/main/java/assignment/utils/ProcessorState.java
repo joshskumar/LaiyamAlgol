@@ -1,4 +1,4 @@
-package assignment.lib.processor;
+package assignment.utils;
 
 import assignment.utils.Color;
 
