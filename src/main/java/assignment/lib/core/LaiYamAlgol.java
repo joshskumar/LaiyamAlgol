@@ -84,6 +84,7 @@ public class LaiYamAlgol {
         //Wait till all the events are completed before collecting the final state of all the processors
         int count = 0;
 
+        // Edit this line if you want to run your Algorithm for more than 5 minutes
         while (!global.getEventList() && count < 300000){
             try {
                 Thread.sleep(1000);

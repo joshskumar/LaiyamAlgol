@@ -26,20 +26,8 @@ public class Processor extends Thread {
 
 
     public void run(){
-//        Event[] events  = this.getEventList();
-//        Channel[] channels = new Channel[events.length];
-//        for(int i=0;i<events.length;i++){
-//            try {
-//                Thread.sleep(event[i].getLaunchDelay());
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//            channels[i]= new Channel(events[i],this.name);
-//        }
-//        for (Channel channel:channels){
-//            channel.start();
-//        }
         for (Event event : this.getEventList()){
+            //This Sleep is to simulate the Event triggers in the different times.
             try {
                 Thread.sleep(event.getLaunchDelay());
             } catch (InterruptedException e) {
