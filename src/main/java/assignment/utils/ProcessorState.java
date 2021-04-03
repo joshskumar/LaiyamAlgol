@@ -2,6 +2,10 @@ package assignment.utils;
 
 import assignment.utils.Color;
 
+/**
+ * This Class is for maintaining the Processor state and various points
+ */
+
 public class ProcessorState {
     private int value;
     private Color color;

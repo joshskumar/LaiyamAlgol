@@ -2,6 +2,9 @@ package assignment.utils;
 
 import java.util.Hashtable;
 
+/**
+ * This class is for setting the global state of the Algorithm which can be used for Calculations
+ */
 public class Constants {
     private  Hashtable<String, ProcessorState> globalstate;
 

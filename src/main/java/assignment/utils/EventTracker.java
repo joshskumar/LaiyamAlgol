@@ -3,6 +3,9 @@ package assignment.utils;
 
 import java.util.Hashtable;
 
+/**
+ * This class is for tracking the events to confirm all have reached their destinations to display the final state.
+ */
 public class EventTracker {
 
     private static EventTracker eventTracker = null;
