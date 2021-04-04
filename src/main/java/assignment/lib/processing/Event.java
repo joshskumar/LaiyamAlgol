@@ -1,15 +1,14 @@
 package assignment.lib.processing;
 
-import assignment.utils.ProcessorState;
-import assignment.utils.Color;
-import assignment.utils.Constants;
-import assignment.utils.EventTracker;
+import assignment.utils.*;
+
 
 public class Event extends Thread{
 
     private  int amount;
     private String destProcess;
     private boolean snapshot=false;
+    private Color color;
     private  int timeTaken;
     private int launchDelay;
     private String eventName;
@@ -32,6 +31,15 @@ public class Event extends Thread{
         this.eventName = eventName;
         this.sourceProcessName= sourceProcessName;
     }
+
+    public void setEventColor(Color color){
+        this.color = color;
+    }
+
+    public Color getEventColor(){
+        return  this.color;
+    }
+
 
     public int getAmount() {
         return amount;
@@ -76,6 +84,8 @@ public class Event extends Thread{
             }
 
             //This Sleep is for simulating the event in transit.
+            System.out.println("The channel amount from source process "+ sourceProcessName + " to destination process "+this.getDestProcess()+
+                               " is "+ this.getAmount() );
             try {
                 Thread.sleep(this.getTimeTaken());
             } catch (InterruptedException e) {
@@ -84,19 +94,19 @@ public class Event extends Thread{
             //globalState.displayGlobalState(sourceProcessName);
             System.out.println("the event has reached the destination process : " + this.getDestProcess());
 
-            Color sorcestateColor = sourceState.getColor();
+            Color sourceStateColor = sourceState.getColor();
 
 
             ProcessorState destState = globalState.getGlobalstate().get(this.getDestProcess());
-            Color deststateColor = destState.getColor();
+            Color destStateColor = destState.getColor();
 
             Color color = Color.WHITE;
-            if(sorcestateColor == Color.RED && deststateColor == Color.WHITE){
+            if(this.getEventColor() == Color.RED && destStateColor == Color.WHITE){
                 // Snapshot is taken if the source Process is red and the destination process is white
                 color = Color.RED;
-                System.out.println(this.snapshotString + " of the processor "+ this.getDestProcess());
+                System.out.println(this.snapshotString + " of the processor on receiving red in "+ this.getDestProcess());
             }
-            else if (sorcestateColor == Color.RED || deststateColor == Color.RED){
+            else if (this.getEventColor() == Color.RED || destStateColor == Color.RED){
                 // If the Source or destination color is red then the Color is maintained but snapshot is not taken
                 //because as per the Algorithm the snap shot should not be taken in a red Algorithm.
                 color = Color.RED;
@@ -109,5 +119,6 @@ public class Event extends Thread{
         }
         EventTracker tracker = EventTracker.init();
         tracker.setEventList(this.getEventName(),true);
+       // ResetSnapshot.init().reset();
     }
 }

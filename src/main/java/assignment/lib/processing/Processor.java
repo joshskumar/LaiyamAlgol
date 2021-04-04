@@ -1,6 +1,8 @@
 package assignment.lib.processing;
 
 
+import assignment.utils.Constants;
+
 public class Processor extends Thread {
 
     private Event event[];
@@ -33,6 +35,8 @@ public class Processor extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            Constants globalState = Constants.init();
+            event.setEventColor(globalState.getGlobalstate().get(this.getProcessorName()).getColor());
             event.start();
         }
     }

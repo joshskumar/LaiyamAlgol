@@ -55,7 +55,7 @@ public class LaiYamAlgol {
                     System.out.println("Enter the Destination Processor number");
                     int destProcessor = scan.nextInt();
 
-                    System.out.println("Enter the transit time of the Event anf enter the time delay after which event should be launched");
+                    System.out.println("Enter the transit time of the Event and enter the time delay after which event should be launched");
                     int transitTaken = scan.nextInt();
                     int launchDelay = scan.nextInt();
 
@@ -84,7 +84,7 @@ public class LaiYamAlgol {
         int count = 0;
 
         // Edit this line if you want to run your Algorithm for more than 5 minutes
-        while (!global.getEventList() && count < 300000){
+        while (!global.getEventList() && count < 300){
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
