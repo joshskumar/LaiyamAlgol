@@ -74,7 +74,6 @@ public class Event extends Thread{
             if(!sourceProcessName.equalsIgnoreCase(this.getDestProcess())) {
                 globalState.setGlobalstate(sourceProcessName, sourceState.getColor(), sourceState.getValue() - this.getAmount());
             }
-            globalState.displayGlobalState(sourceProcessName);
 
             //This Sleep is for simulating the event in transit.
             try {
@@ -82,6 +81,7 @@ public class Event extends Thread{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            //globalState.displayGlobalState(sourceProcessName);
             System.out.println("the event has reached the destination process : " + this.getDestProcess());
 
             Color sorcestateColor = sourceState.getColor();
