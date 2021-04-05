@@ -78,10 +78,8 @@ public class Event extends Thread{
 
         } else {
 
-            //Source Amount is deducted only if the Source and destination process are different.
-            if(!sourceProcessName.equalsIgnoreCase(this.getDestProcess())) {
-                globalState.setGlobalstate(sourceProcessName, sourceState.getColor(), sourceState.getValue() - this.getAmount());
-            }
+
+            globalState.setGlobalstate(sourceProcessName, sourceState.getColor(), sourceState.getValue() - this.getAmount());
 
             //This Sleep is for simulating the event in transit.
             System.out.println("The channel amount from source process "+ sourceProcessName + " to destination process "+this.getDestProcess()+
