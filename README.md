@@ -29,7 +29,8 @@ command to execute the jar
 ````
 java -jar laiyang-2.0.jar
 ````
-# Limitations
+Limitations
+---
 - Reset of the global state after all the Processes have turned red is not implemented because the one who executes this code will know the final state of the algorithm
 ```
 ResetSnapshot.init().reset();
@@ -138,5 +139,6 @@ Please pay attention while entering the data for the below value
  Current color : RED
  Current amount : 601
 ````
-# Git hub link 
+Git hub link 
+---
 https://github.com/joshskumar/LaiyamAlgol
